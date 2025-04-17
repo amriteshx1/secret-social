@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Sign-Up!</h1>
+    <%- include("partials/errors.ejs") %>
     <form action="/signup" method="post">
         <label for="firstname">First Name:</label>
         <input type="text" name="firstname" id="firstname" required />
@@ -17,7 +18,7 @@
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required />
         <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="ConfirmPassword" id="confirmPassword" required />
+        <input type="password" name="confirmPassword" id="confirmPassword" required />
         <button type="submit">Register</button>
     </form>
 </body>
