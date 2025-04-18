@@ -14,6 +14,10 @@
               <strong><%= msg.title %></strong> by <%= msg.author %><br />
               <%= msg.text %><br />
               <h3><%= msg.created_at %></h3>
+
+              <% if (user && user.isadmin) { %>
+                <a href="/delete/<%= msg.id %>" onclick="return confirm('Are you sure you want to delete this message?');">Delete</a>
+              <% } %>
             </li>
           <% }) %>
         </ul>
