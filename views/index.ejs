@@ -6,7 +6,13 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Home Page Buddy!</h1>
-    <a href="/signup">Register</a>
+    <% if (locals.user) {%>
+        <h1>WELCOME BACK <%= user.username %></h1>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <h1>Home Page Buddy!</h1>
+        <a href="/signup">Register</a>
+        <a href="/login">Login</a>
+    <%}%>
 </body>
 </html>

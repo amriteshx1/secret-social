@@ -1,6 +1,8 @@
 const { body, validationResult } = require("express-validator");
 const db = require('../database/queries');
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
+
 
 const alphaErr = "must only contain letters.";
 const lengthErr = "must be between 1 and 10 characters.";
@@ -29,7 +31,7 @@ const validateUser = [
 ];
 
 exports.getHomepage = (req, res) => {
-    res.render('index', {title: 'Home'});
+    res.render('index', {title: 'Home', user: req.user});
 }
 
 exports.getSignUp = (req,res) => {
@@ -53,3 +55,21 @@ exports.postSignUp = [
         res.redirect('/');
     }
 ];
+
+exports.getLogin = (req, res) => {
+  res.render('login', {title: "Login"});
+}
+
+exports.postLogin = passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/login",
+});
+
+exports.getLogout = (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+}
