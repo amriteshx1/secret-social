@@ -6,8 +6,12 @@
     <title><%= title %></title>
 </head>
 <body>
-    <% if (locals.user) {%>
+    <% if (locals.user && user.membershipstatus) { %>
+        <h1>Congrats, you are a member buddy!</h1>
+        <a href="/logout">LOG OUT</a>
+    <% } else if (locals.user) {%>
         <h1>WELCOME BACK <%= user.username %></h1>
+        <a href="/membership">Become our member</a>
         <a href="/logout">LOG OUT</a>
       <% } else { %>
         <h1>Home Page Buddy!</h1>

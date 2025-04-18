@@ -14,8 +14,13 @@ async function findUserById(id){
     return rows[0];
 }
 
+async function becomeMember(username){
+    await pool.query("UPDATE users SET membershipStatus = true WHERE username = $1", [username]);
+}
+
 module.exports = {
     insertNewUser,
     findUserByEmail,
-    findUserById
+    findUserById,
+    becomeMember
 };

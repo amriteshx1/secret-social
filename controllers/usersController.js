@@ -73,3 +73,24 @@ exports.getLogout = (req, res) => {
     res.redirect("/");
   });
 }
+
+exports.getMembership = (req, res) => {
+  res.render("secret", {title: "Secret", query: req.query})
+}
+
+exports.postSecret = async (req, res) => {
+  const username = req.user.username;
+  const passcode = req.body.secretpasscode;
+  const user = await db.findUserByEmail(username);
+  if(passcode == user.lastname){
+    await db.becomeMember(username);
+    
+    const updatedUser = await db.findUserByEmail(username);
+    req.login(updatedUser, function (err) {
+      if (err) return next(err);
+      return res.redirect("/");
+    });
+  }else {
+    res.redirect("/membership?error=1");
+  }
+}

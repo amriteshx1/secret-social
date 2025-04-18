@@ -8,5 +8,7 @@ usersRouter.post("/signup", usersController.postSignUp);
 usersRouter.get("/login", usersController.getLogin);
 usersRouter.post("/login", usersController.postLogin);
 usersRouter.get("/logout", usersController.getLogout);
+usersRouter.get("/membership", usersController.getMembership);
+usersRouter.post("/membership/secret", usersController.postSecret);
 
 module.exports = usersRouter;
