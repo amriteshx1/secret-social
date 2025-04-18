@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <% if (messages && messages.length > 0) { %>
+        <h2>All Messages</h2>
+        <ul>
+          <% messages.forEach(msg => { %>
+            <li>
+              <strong><%= msg.title %></strong> by <%= msg.author %><br />
+              <%= msg.text %><br />
+              <h3><%= msg.created_at %></h3>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+</body>
+</html>

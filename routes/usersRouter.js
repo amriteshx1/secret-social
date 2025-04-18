@@ -12,5 +12,6 @@ usersRouter.get("/membership", usersController.getMembership);
 usersRouter.post("/membership/secret", usersController.postSecret);
 usersRouter.get("/create", usersController.getCreate);
 usersRouter.post("/create/message", usersController.postCreate);
+usersRouter.get("/messages", usersController.getMessages);
 
 module.exports = usersRouter;

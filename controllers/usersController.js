@@ -105,3 +105,8 @@ exports.postCreate = async(req,res) => {
   await db.createMessage(title, text, author);
   res.redirect("/");
 }
+
+exports.getMessages = async(req, res) => {
+  const messages = await db.getAllMessages();
+  res.render("messages", { title: "Messages", messages });
+}

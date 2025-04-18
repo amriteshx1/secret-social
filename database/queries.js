@@ -22,10 +22,16 @@ async function createMessage(title, text, author){
     await pool.query("INSERT INTO messages (title, text, author ) VALUES ($1, $2, $3 )", [title, text, author]);
 }
 
+async function getAllMessages(){
+    const result = await pool.query("SELECT * FROM messages ORDER BY created_at DESC");
+    return result.rows;
+}
+
 module.exports = {
     insertNewUser,
     findUserByEmail,
     findUserById,
     becomeMember,
-    createMessage
+    createMessage,
+    getAllMessages
 };

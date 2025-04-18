@@ -9,6 +9,7 @@
     <% if (locals.user && user.membershipstatus) { %>
         <h1>Congrats, you are a member buddy!</h1>
         <a href="/create">Create a new message</a>
+        <a href="/messages">See all messages!</a>
         <a href="/logout">LOG OUT</a>
     <% } else if (locals.user) {%>
         <h1>WELCOME BACK <%= user.username %></h1>
