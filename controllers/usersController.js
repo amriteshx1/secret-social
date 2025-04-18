@@ -1,5 +1,6 @@
 const { body, validationResult } = require("express-validator");
 const db = require('../database/queries');
+const bcrypt = require('bcryptjs');
 
 const alphaErr = "must only contain letters.";
 const lengthErr = "must be between 1 and 10 characters.";
@@ -45,7 +46,9 @@ exports.postSignUp = [
               errors: errors.array(),
             });
           }
-        const { firstname, lastname, username, password} = req.body;
+
+        const password = await bcrypt.hash(req.body.password, 10);
+        const { firstname, lastname, username} = req.body;
         await db.insertNewUser(firstname, lastname, username, password);
         res.redirect('/');
     }
