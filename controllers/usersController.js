@@ -94,3 +94,14 @@ exports.postSecret = async (req, res) => {
     res.redirect("/membership?error=1");
   }
 }
+
+exports.getCreate = (req,res) => {
+  res.render("createmsg", {title: 'Create'});
+}
+
+exports.postCreate = async(req,res) => {
+  const { title, text } = req.body;
+  const author = req.user.username;
+  await db.createMessage(title, text, author);
+  res.redirect("/");
+}

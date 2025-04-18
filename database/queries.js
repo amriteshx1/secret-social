@@ -18,9 +18,14 @@ async function becomeMember(username){
     await pool.query("UPDATE users SET membershipStatus = true WHERE username = $1", [username]);
 }
 
+async function createMessage(title, text, author){
+    await pool.query("INSERT INTO messages (title, text, author ) VALUES ($1, $2, $3 )", [title, text, author]);
+}
+
 module.exports = {
     insertNewUser,
     findUserByEmail,
     findUserById,
-    becomeMember
+    becomeMember,
+    createMessage
 };

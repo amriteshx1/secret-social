@@ -10,5 +10,7 @@ usersRouter.post("/login", usersController.postLogin);
 usersRouter.get("/logout", usersController.getLogout);
 usersRouter.get("/membership", usersController.getMembership);
 usersRouter.post("/membership/secret", usersController.postSecret);
+usersRouter.get("/create", usersController.getCreate);
+usersRouter.post("/create/message", usersController.postCreate);
 
 module.exports = usersRouter;
