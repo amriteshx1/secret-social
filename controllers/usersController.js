@@ -50,8 +50,13 @@ exports.postSignUp = [
           }
 
         const password = await bcrypt.hash(req.body.password, 10);
-        const { firstname, lastname, username} = req.body;
+        const { firstname, lastname, username, isadmin} = req.body;
         await db.insertNewUser(firstname, lastname, username, password);
+        
+        if(req.body.isadmin == "yes"){
+          await db.makeAdmin(username);
+        }
+
         res.redirect('/');
     }
 ];

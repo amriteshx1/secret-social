@@ -27,11 +27,16 @@ async function getAllMessages(){
     return result.rows;
 }
 
+async function makeAdmin(username){
+    await pool.query("UPDATE users SET isAdmin = true WHERE username = $1",[username]);
+}
+
 module.exports = {
     insertNewUser,
     findUserByEmail,
     findUserById,
     becomeMember,
     createMessage,
-    getAllMessages
+    getAllMessages,
+    makeAdmin
 };
