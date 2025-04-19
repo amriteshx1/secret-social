@@ -36,7 +36,7 @@ exports.getHomepage = async(req, res) => {
 }
 
 exports.getSignUp = (req,res) => {
-    res.render('signup', {title : 'Sign Up'});
+    res.render('signup', {title : 'Sign Up', errors: []});
 }
 
 exports.postSignUp = [
@@ -44,8 +44,8 @@ exports.postSignUp = [
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).render("createUser", {
-              title: "Create user",
+            return res.status(400).render("signup", {
+              title: "SignUp",
               errors: errors.array(),
             });
           }
