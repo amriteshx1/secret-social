@@ -10,15 +10,22 @@
         <h2>All Messages</h2>
         <ul>
           <% messages.forEach(msg => { %>
+            <% if (user && user.membershipstatus) { %>
+              <li>
+                <strong><%= msg.title %></strong> by <%= msg.author %><br />
+                <%= msg.text %><br />
+                <h3><%= msg.created_at %></h3>
+  
+                <% if (user && user.isadmin) { %>
+                  <a href="/delete/<%= msg.id %>" onclick="return confirm('Are you sure you want to delete this message?');">Delete</a>
+                <% } %>
+              </li>
+           <% } else { %>
             <li>
-              <strong><%= msg.title %></strong> by <%= msg.author %><br />
+              <strong><%= msg.title %></strong><br />
               <%= msg.text %><br />
-              <h3><%= msg.created_at %></h3>
-
-              <% if (user && user.isadmin) { %>
-                <a href="/delete/<%= msg.id %>" onclick="return confirm('Are you sure you want to delete this message?');">Delete</a>
-              <% } %>
             </li>
+           <% } %>
           <% }) %>
         </ul>
       <% } %>

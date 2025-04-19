@@ -30,8 +30,9 @@ const validateUser = [
     .withMessage('Passwords do not match'),
 ];
 
-exports.getHomepage = (req, res) => {
-    res.render('index', {title: 'Home', user: req.user});
+exports.getHomepage = async(req, res) => {
+    const messages = await db.getAllMessages(); 
+    res.render('index', {title: 'Home', user: req.user, messages});
 }
 
 exports.getSignUp = (req,res) => {

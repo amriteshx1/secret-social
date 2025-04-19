@@ -19,6 +19,7 @@
         <h1>Home Page Buddy!</h1>
         <a href="/signup">Register</a>
         <a href="/login">Login</a>
+        <%- include("messages", { messages: messages, user: user }) %>
     <%}%>
 </body>
 </html>
