@@ -1,1 +1,98 @@
-/* initial structure */
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body,html{
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Home Page (for non-registered user) */
+.homeCnt{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: oklch(98.6% 0.031 120.757);
+    font-family: 'Poppins', sans-serif;
+}
+.miniHomeCnt{
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+.tinyHomeCnt{
+    min-height: 47vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.tinyHomeCnt > p{
+    font-family: inherit;
+    font-size: 5vw;
+    color: oklch(98.6% 0.031 120.757);
+}
+.tinyHomeCnt > p span{
+    color: gray;
+}
+.homelogos{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+.homelogos a{
+    width: 25%;
+    text-decoration: none;
+    border: 2px solid gray;
+    padding: 10px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    color: gray;
+    border-radius: 10px;
+}
+.homelogos a:hover{
+    border: 2px solid white;
+    color: white;
+}
+
+.homeMsg{
+    min-height: 38vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2vh;
+}
+
+.miniHomeMsg{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 0.3vh;
+}
+.miniHomeMsg p{
+    width: 100%;
+    text-align: start;
+    overflow-wrap: break-word;
+    font-size: 2vh;
+}
+.miniHomeMsg p strong{
+    color: gray;
+}
