@@ -16,9 +16,13 @@
         <a href="/messages">See all messages!</a>
         <a href="/logout">LOG OUT</a>
     <% } else if (locals.user) {%>
-        <h1>WELCOME BACK <%= user.username %></h1>
-        <a href="/membership">Become our member</a>
-        <a href="/logout">LOG OUT</a>
+        <div class="newUser">
+        <div class="miniNewUser">
+        <h1>Hey <%= user.firstname %>! What's up?</h1>
+        <p>Membership to our private circle awaits - <a href="/membership">enter with the code</a> to proceed!</p>
+        <a href="/logout">⬅ Log Out</a>
+        </div>
+        </div>
       <% } else { %>
         <div class="homeCnt">
             <div class="miniHomeCnt">
