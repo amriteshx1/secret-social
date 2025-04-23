@@ -10,8 +10,8 @@ body,html{
     width: 100vw;
 }
 
-/* Home Page & Sign Up */
-.homeCnt, .signup{
+/* Home Page & Sign Up & Login */
+.homeCnt, .signup, .login{
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -21,7 +21,7 @@ body,html{
     color: oklch(98.6% 0.031 120.757);
     font-family: 'Poppins', sans-serif;
 }
-.miniHomeCnt, .miniSignup{
+.miniHomeCnt, .miniSignup, .miniLogin{
     min-height: 90vh;
     width: 100%;
     display: flex;
@@ -97,20 +97,20 @@ body,html{
     color: gray;
 }
 
-.miniSignup > h2{
+.miniSignup > h2, .miniLogin > h1{
     font-family: inherit;
     font-size: 3vw;
 }
-.miniSignup form {
-    height: 50vh;
+.miniSignup form, .miniLogin form {
+    height: 60vh;
     width: 25vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1vh;
 }
-.miniSignup form button{
+.miniSignup form button, .miniLogin form button{
     width: 30%;
     font-family: inherit;
     border: 2px solid white;
@@ -123,14 +123,15 @@ body,html{
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 1vh;
 }
-.miniSignup form button:hover{
+.miniSignup form button:hover, .miniLogin form button:hover{
     color: gray;
     background-color: black;
     border: 2px solid gray;
 }
 
-.formCnt{
+.formCnt, .tinyLogin{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -145,10 +146,10 @@ body,html{
     align-items: center;
     gap: 10px;
 }
-.formCnt label, .formCnt2 label{
+.formCnt label, .formCnt2 label, .tinyLogin label{
     font-size: 1.3;
 }
-.formCnt input{
+.formCnt input, .tinyLogin input{
     width: 100%;
     height: 4vh;
     text-align: start;
