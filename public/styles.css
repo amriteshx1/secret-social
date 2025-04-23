@@ -11,7 +11,7 @@ body,html{
 }
 
 /* Home Page & Sign Up & Login */
-.homeCnt, .signup, .login, .newUser{
+.homeCnt, .signup, .login, .newUser, .secretCnt{
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -21,7 +21,7 @@ body,html{
     color: oklch(98.6% 0.031 120.757);
     font-family: 'Poppins', sans-serif;
 }
-.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser{
+.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser, .miniSecretCnt{
     min-height: 90vh;
     width: 100%;
     display: flex;
@@ -101,7 +101,7 @@ body,html{
     font-family: inherit;
     font-size: 3vw;
 }
-.miniSignup form, .miniLogin form {
+.miniSignup form, .miniLogin form, .miniSecretCnt form {
     height: 60vh;
     width: 25vw;
     display: flex;
@@ -110,7 +110,7 @@ body,html{
     align-items: center;
     gap: 1vh;
 }
-.miniSignup form button, .miniLogin form button{
+.miniSignup form button, .miniLogin form button, .miniSecretCnt form button{
     width: 30%;
     font-family: inherit;
     border: 2px solid white;
@@ -125,13 +125,13 @@ body,html{
     cursor: pointer;
     margin-top: 1vh;
 }
-.miniSignup form button:hover, .miniLogin form button:hover{
+.miniSignup form button:hover, .miniLogin form button:hover, .miniSecretCnt form button:hover{
     color: gray;
     background-color: black;
     border: 2px solid gray;
 }
 
-.formCnt, .tinyLogin{
+.formCnt, .tinyLogin, .tinySecretCnt{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -146,10 +146,10 @@ body,html{
     align-items: center;
     gap: 10px;
 }
-.formCnt label, .formCnt2 label, .tinyLogin label{
+.formCnt label, .formCnt2 label, .tinyLogin label, .tinySecretCnt label{
     font-size: 1.3;
 }
-.formCnt input, .tinyLogin input{
+.formCnt input, .tinyLogin input, .tinySecretCnt input{
     width: 100%;
     height: 4vh;
     text-align: start;
