@@ -11,7 +11,7 @@ body,html{
 }
 
 /* Home Page & Sign Up & Login */
-.homeCnt, .signup, .login, .newUser, .secretCnt, .newMember{
+.homeCnt, .signup, .login, .newUser, .secretCnt, .newMember, .newMsg{
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -21,7 +21,7 @@ body,html{
     color: oklch(98.6% 0.031 120.757);
     font-family: 'Poppins', sans-serif;
 }
-.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser, .miniSecretCnt, .miniNewMember{
+.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser, .miniSecretCnt, .miniNewMember, .miniNewMsg{
     min-height: 90vh;
     width: 100%;
     display: flex;
@@ -97,11 +97,11 @@ body,html{
     color: gray;
 }
 
-.miniSignup > h2, .miniLogin > h1, .miniNewUser > h1, .miniNewMember > h1{
+.miniSignup > h2, .miniLogin > h1, .miniNewUser > h1, .miniNewMember > h1, .miniNewMsg > h1{
     font-family: inherit;
     font-size: 3vw;
 }
-.miniSignup form, .miniLogin form, .miniSecretCnt form {
+.miniSignup form, .miniLogin form, .miniSecretCnt form, .miniNewMsg form {
     height: 60vh;
     width: 25vw;
     display: flex;
@@ -110,7 +110,7 @@ body,html{
     align-items: center;
     gap: 1vh;
 }
-.miniSignup form button, .miniLogin form button, .miniSecretCnt form button{
+.miniSignup form button, .miniLogin form button, .miniSecretCnt form button, .miniNewMsg form button{
     width: 30%;
     font-family: inherit;
     border: 2px solid white;
@@ -125,13 +125,13 @@ body,html{
     cursor: pointer;
     margin-top: 1vh;
 }
-.miniSignup form button:hover, .miniLogin form button:hover, .miniSecretCnt form button:hover{
+.miniSignup form button:hover, .miniLogin form button:hover, .miniSecretCnt form button:hover, .miniNewMsg form button:hover{
     color: gray;
     background-color: black;
     border: 2px solid gray;
 }
 
-.formCnt, .tinyLogin, .tinySecretCnt{
+.formCnt, .tinyLogin, .tinySecretCnt, .tinyNewMsg{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -146,10 +146,10 @@ body,html{
     align-items: center;
     gap: 10px;
 }
-.formCnt label, .formCnt2 label, .tinyLogin label, .tinySecretCnt label{
+.formCnt label, .formCnt2 label, .tinyLogin label, .tinySecretCnt label, .tinyNewMsg label{
     font-size: 1.3;
 }
-.formCnt input, .tinyLogin input, .tinySecretCnt input{
+.formCnt input, .tinyLogin input, .tinySecretCnt input, .tinyNewMsg input, .tinyNewMsg textarea{
     width: 100%;
     height: 4vh;
     text-align: start;
@@ -204,4 +204,8 @@ body,html{
 }
 .tinyNewMember > p{
     font-size: 1.3vw;
+}
+
+.tinyNewMsg textarea{
+    height: 9vh;
 }
