@@ -11,7 +11,7 @@ body,html{
 }
 
 /* Home Page & Sign Up & Login */
-.homeCnt, .signup, .login, .newUser, .secretCnt{
+.homeCnt, .signup, .login, .newUser, .secretCnt, .newMember{
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -21,7 +21,7 @@ body,html{
     color: oklch(98.6% 0.031 120.757);
     font-family: 'Poppins', sans-serif;
 }
-.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser, .miniSecretCnt{
+.miniHomeCnt, .miniSignup, .miniLogin, .miniNewUser, .miniSecretCnt, .miniNewMember{
     min-height: 90vh;
     width: 100%;
     display: flex;
@@ -97,7 +97,7 @@ body,html{
     color: gray;
 }
 
-.miniSignup > h2, .miniLogin > h1, .miniNewUser > h1{
+.miniSignup > h2, .miniLogin > h1, .miniNewUser > h1, .miniNewMember > h1{
     font-family: inherit;
     font-size: 3vw;
 }
@@ -160,22 +160,22 @@ body,html{
     color: black;
     font-family: inherit;
 }
-.miniNewUser{
+.miniNewUser, .miniNewMember{
     justify-content: space-around;
 }
 .miniNewUser > p{
     font-family: inherit;
     font-size: 1.7vw;
 }
-.miniNewUser > p > a{
+.miniNewUser > p > a, .tinyNewMember > p > a{
     font-family: inherit;
     color: gray;
     text-decoration: none;
 }
-.miniNewUser > p > a:hover{
+.miniNewUser > p > a:hover, .tinyNewMember > p > a:hover{
     text-decoration: underline;
 }
-.miniNewUser > a{
+.miniNewUser > a, .miniNewMember > a{
     font-family: inherit;
     font-size: 0.9vw;
     text-decoration: none;
@@ -184,7 +184,24 @@ body,html{
     padding: 5px;
     border-radius: 10px;
 }
-.miniNewUser > a:hover{
+.miniNewUser > a:hover, .miniNewMember > a:hover{
     color: white;
     border: 2px solid white;
+}
+
+.tinyNewMember{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vh;
+}
+.tinyNewMember > h2{
+    align-self: center;
+    font-size: 1.8vw;
+    margin-bottom: 4vh;
+}
+.tinyNewMember > p{
+    font-size: 1.3vw;
 }

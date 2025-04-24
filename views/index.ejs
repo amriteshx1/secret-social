@@ -11,15 +11,22 @@
 </head>
 <body>
     <% if (locals.user && user.membershipstatus) { %>
-        <h1>Congrats, you are a member buddy!</h1>
-        <a href="/create">Create a new message</a>
-        <a href="/messages">See all messages!</a>
-        <a href="/logout">LOG OUT</a>
+        <div class="newMember">
+        <div class="miniNewMember">
+        <h1>Congrats, you are a secret member now! 🎉</h1>
+        <div class="tinyNewMember">
+        <h2>You had unlocked your mistic powers:</h2>
+        <p>- Announce your arrival with a bold <a href="/create"><em>message</em></a> !</p>
+        <p>- <a href="/messages"><em>Uncover</em></a> the hidden tomes — know the authors, time spells, and perhaps... erase, if fate allows</p>
+        </div>
+        <a href="/logout">⬅ Log Out</a>
+        </div>
+        </div>
     <% } else if (locals.user) {%>
         <div class="newUser">
         <div class="miniNewUser">
         <h1>Hey <%= user.firstname %>! What's up?</h1>
-        <p>Membership to our private circle awaits - <a href="/membership">enter with the code</a> to proceed!</p>
+        <p>Membership to our private circle awaits - <a href="/membership"><em>enter with the code</em></a> to proceed!</p>
         <a href="/logout">⬅ Log Out</a>
         </div>
         </div>
