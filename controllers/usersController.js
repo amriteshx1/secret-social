@@ -114,11 +114,11 @@ exports.postCreate = async(req,res) => {
 
 exports.getMessages = async(req, res) => {
   const messages = await db.getAllMessages();
-  res.render("messages", { title: "Messages", messages, user: req.user });
+  res.render("allmessages", { title: "Messages", messages, user: req.user });
 }
 
 exports.getDelete = async (req, res) => {
   const id = req.params.id;
   await db.deleteMsg(id);
-  res.redirect("/messages");
+  res.redirect("/allmessages");
 }
