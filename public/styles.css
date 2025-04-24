@@ -10,7 +10,7 @@ body,html{
     width: 100vw;
 }
 
-/* Home Page & Sign Up & Login */
+/* Home Page & Sign Up & Login & ....................... turned out to be everything!!!  */
 .homeCnt, .signup, .login, .newUser, .secretCnt, .newMember, .newMsg, .allMsg{
     min-height: 100vh;
     width: 100vw;
