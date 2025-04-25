@@ -36,19 +36,20 @@ VALUES
 ('Quote of the Day', 'Success is not final, failure is not fatal—it is the courage to continue that counts.', 'sneha@example.com');
 `;
 
-async function main() {
-  console.log("seeding...");
+async function main(){
   const client = new Client({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-  });
-  await client.connect();
-  await client.query(SQL);
-  await client.end();
-  console.log("done");
-}
+          connectionString: process.env.DATABASE_URL,
+          ssl: { rejectUnauthorized: false },
+      });
+      try {
+          await client.connect();
+          await client.query(SQL);
+          console.log("✅ Table created and messages inserted!");
+        } catch (err) {
+          console.error("❌ Error running script:", err);
+        } finally {
+          await client.end();
+        }
+  }
 
 main();
