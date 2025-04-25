@@ -4,7 +4,8 @@
   "description": "A Node.js-powered private club where members post with hidden identities - built with Passport, bcrypt, PostgreSQL, and a pinch of mystery. Only members see the truth - outsiders just read and wonder!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
